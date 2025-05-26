@@ -1,81 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Viagens Planejadas</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoDream 🌍 - Viagens</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>GoDream🌍</h1>
-      <input type="text" id="search" placeholder="Buscar destino..." />
-    </div>
-  </header>
 
-  <main class="container">
-    <!-- Formulário -->
-    <section id="form-section">
-      <h2>Planejar Nova Viagem</h2>
-      <form id="trip-form">
-        <select id="destino" required>
-          <option value="">Escolha um destino...</option>
-          <option value="Alemanha">Alemanha</option>
-          <option value="Argentina">Argentina</option>
-          <option value="Austrália">Austrália</option>
-          <option value="Brasil">Brasil</option>
-          <option value="Canadá">Canadá</option>
-          <option value="China">China</option>
-          <option value="Disney">Disney</option>
-          <option value="Emirados Árabes">Emirados Árabes</option>
-          <option value="Espanha">Espanha</option>
-          <option value="Estados Unidos">Estados Unidos</option>
-          <option value="França">França</option>
-          <option value="Grécia">Grécia</option>
-          <option value="Hollywood">Hollywood</option>
-          <option value="Índia">Índia</option>
-          <option value="Itália">Itália</option>
-          <option value="Japão">Japão</option>
-          <option value="Las Vegas">Las Vegas</option>
-          <option value="México">México</option>
-          <option value="Portugal">Portugal</option>
-          <option value="Reino Unido">Reino Unido</option>
-          <option value="Suíça">Suíça</option>
-          <option value="Tailândia">Tailândia</option>
-        </select>
-
-        <input type="date" id="data" required />
-        <select id="status">
-          <option value="planejada">Planejada</option>
-          <option value="confirmada">Confirmada</option>
-        </select>
-        <button type="submit">Cadastrar Viagem</button>
-      </form>
-    </section>
-
-    <!-- Lista de viagens cadastradas -->
-    <section id="viagens">
-      <h2>Próximas Viagens</h2>
-      <div id="lista-viagens"></div>
-    </section>
-  </main>
-
-  <!-- Modal de confirmação -->
-  <div id="modal" style="display:none;">
-    <div>
-      <h3>Confirmar viagem para <span id="modal-destino"></span>?</h3>
-      <button id="btn-confirmar">Sim</button>
-      <button id="btn-cancelar">Não</button>
-      <p id="mensagem-agradecimento" style="display:none; margin-top: 1rem; color:green; font-weight:600;"></p>
+  <!-- Tela de login -->
+  <div id="login-screen" class="center">
+    <div class="login-box">
+      <h1>Bem-vindo à GoDream 🌍</h1>
+      <input type="text" id="username" placeholder="Digite seu nome" required>
+      <button onclick="entrar()">Entrar</button>
     </div>
   </div>
 
-  <footer>
-    <p>© 2025 Emilly Viagens. Seu sonho saindo do papel.</p>
-  </footer>
+  <!-- Tela principal -->
+  <div id="main-screen" style="display: none;">
+    <header>
+      <div class="container">
+        <h1>GoDream 🌍</h1>
+        <p id="welcome"></p>
+      </div>
+    </header>
 
-  <script src="script.js"></script>
+    <main class="container">
+      <!-- Formulário -->
+      <section id="form-section">
+        <h2>Planejar Nova Viagem</h2>
+        <form id="trip-form">
+          <select id="destino" required>
+            <option value="">Escolha um destino...</option>
+            <option value="Alemanha">Alemanha</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Austrália">Austrália</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Canadá">Canadá</option>
+            <option value="Disney">Disney</option>
+            <option value="Espanha">Espanha</option>
+            <option value="Estados Unidos">Estados Unidos</option>
+            <option value="França">França</option>
+            <option value="Grécia">Grécia</option>
+            <option value="Itália">Itália</option>
+            <option value="Japão">Japão</option>
+            <option value="Las Vegas">Las Vegas</option>
+            <option value="México">México</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Reino Unido">Reino Unido</option>
+            <option value="Suíça">Suíça</option>
+            <option value="Tailândia">Tailândia</option>
+          </select>
+          <input type="date" id="data" required>
+          <select id="status">
+            <option value="planejada">Planejada</option>
+            <option value="confirmada">Confirmada</option>
+          </select>
+          <button type="submit">Cadastrar Viagem</button>
+        </form>
+      </section>
+
+      <!-- Lista de viagens -->
+      <section id="viagens">
+        <h2>Minhas Viagens</h2>
+        <div id="lista-viagens"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 GoDream 🌍 — Seu sonho saindo do papel.</p>
+    </footer>
+  </div>
+
+<script src="script.js"></script>
 </body>
 </html>
